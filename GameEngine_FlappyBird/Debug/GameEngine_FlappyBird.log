@@ -1,0 +1,6 @@
+﻿  Sprite.cpp
+C:\Users\Samuel Arminana\Documents\Docs\CPP-Projects\GameEngine_FlappyBird\GameEngine_FlappyBird\Engine\Graphics\Texture.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Samuel Arminana\Documents\Docs\CPP-Projects\GameEngine_FlappyBird\GameEngine_FlappyBird\Engine\Graphics\Sprite.cpp(55): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Samuel Arminana\Documents\Docs\CPP-Projects\GameEngine_FlappyBird\GameEngine_FlappyBird\Engine\Graphics\Sprite.cpp(57): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Samuel Arminana\Documents\Docs\CPP-Projects\GameEngine_FlappyBird\GameEngine_FlappyBird\Engine\Graphics\Sprite.cpp(59): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  GameEngine_FlappyBird.vcxproj -> C:\Users\Samuel Arminana\Documents\Docs\CPP-Projects\GameEngine_FlappyBird\Debug\GameEngine_FlappyBird.exe
