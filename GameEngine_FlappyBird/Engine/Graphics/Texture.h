@@ -1,5 +1,4 @@
-#ifndef ENGINE_TEXTURE
-#define ENGINE_TEXTURE
+#pragma once
 
 #include "GLFW/glfw3.h"
 #include "SOIL/src/SOIL.h"
@@ -28,5 +27,3 @@ private:
 	int height;
 
 };
-
-#endif 

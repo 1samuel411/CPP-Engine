@@ -123,15 +123,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Components\Rigidbody\Rigidbody.cpp" />
+    <ClCompile Include="Engine\Components\SpriteRenderer\SpriteRenderer.cpp" />
+    <ClCompile Include="Engine\Components\Transform\Transform.cpp" />
     <ClCompile Include="Engine\Engine.cpp" />
-    <ClCompile Include="Engine\Graphics\Sprite.cpp" />
     <ClCompile Include="Engine\Graphics\Texture.cpp" />
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Engine\IO\Input.cpp" />
+    <ClCompile Include="Engine\Objects\Object.cpp" />
+    <ClCompile Include="Game\Components\Bird.cpp" />
+    <ClCompile Include="Game\Game.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Components\Component.h" />
+    <ClInclude Include="Engine\Components\Rigidbody\Rigidbody.h" />
+    <ClInclude Include="Engine\Components\SpriteRenderer\SpriteRenderer.h" />
+    <ClInclude Include="Engine\Components\Transform\Transform.h" />
     <ClInclude Include="Engine\Engine.h" />
-    <ClInclude Include="Engine\Graphics\Sprite.h" />
     <ClInclude Include="Engine\Graphics\Texture.h" />
+    <ClInclude Include="Engine\Headers.h" />
+    <ClInclude Include="Engine\IO\Input.h" />
+    <ClInclude Include="Engine\Objects\Object.h" />
+    <ClInclude Include="Engine\Structures\Structures.h" />
+    <ClInclude Include="Game\Components\Bird.h" />
+    <ClInclude Include="Game\ComponentHeaders.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

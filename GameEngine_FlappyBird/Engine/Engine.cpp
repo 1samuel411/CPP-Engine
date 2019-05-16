@@ -31,6 +31,9 @@ bool Engine::Initialize(const char* title)
 		return false;
 	}
 
+	// Input setup
+	new Input(window);
+
 	// GLFW Setup
 	glfwMakeContextCurrent(window);
 
@@ -44,8 +47,26 @@ bool Engine::Initialize(const char* title)
 	int yPos = (vidMode->height - SCREEN_HEIGHT) / 2;
 	glfwSetWindowPos(window, xPos, yPos);
 
-	// GL Setup
+	return true;
+}
 
+void Engine::Update()
+{
+	glfwPollEvents();
+
+	Input::instance->Update();
+
+	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); it++)
+	{
+		(*it)->Update();
+	}
+}
+
+void Engine::BeginRender()
+{
+	// GL Setup
+	int width, height;
+	glfwGetFramebufferSize(window, &width, &height);
 	// Viewport
 	glViewport(0, 0, width, height);
 	glMatrixMode(GL_PROJECTION);
@@ -59,16 +80,7 @@ bool Engine::Initialize(const char* title)
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	return true;
-}
 
-void Engine::Update()
-{
-	glfwPollEvents();
-}
-
-void Engine::BeginRender()
-{
 	glClearColor(0, 0, 1, 1);
 	// Clear color and depth
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -77,4 +89,22 @@ void Engine::BeginRender()
 void Engine::EndRender()
 {
 	glfwSwapBuffers(window);
+}
+
+void Engine::Render()
+{
+	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); it++)
+	{
+		(*it)->Render();
+	}
+}
+
+bool Engine::ShouldClose()
+{
+	return glfwWindowShouldClose(window);
+}
+
+void Engine::AddObject(Object* obj)
+{
+	objects.insert(objects.end(), obj);
 }
