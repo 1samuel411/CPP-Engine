@@ -17,9 +17,9 @@ class Input
 
 public:
 	Input(GLFWwindow* window);
-	bool GetKey(int key);
-	bool GetKeyUp(int key);
-	bool GetKeyDown(int key);
+	static bool GetKey(int key);
+	static bool GetKeyUp(int key);
+	static bool GetKeyDown(int key);
 	void Update();
 	static Input* instance;
 

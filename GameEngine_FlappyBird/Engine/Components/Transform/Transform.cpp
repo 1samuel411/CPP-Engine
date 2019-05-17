@@ -9,6 +9,10 @@ Transform::Transform()
 	scale.y = 1;
 }
 
+void Transform::Start()
+{
+}
+
 void Transform::Update()
 {
 }

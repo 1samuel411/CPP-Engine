@@ -130,6 +130,7 @@
     <ClCompile Include="Engine\Graphics\Texture.cpp" />
     <ClCompile Include="Engine\IO\Input.cpp" />
     <ClCompile Include="Engine\Objects\Object.cpp" />
+    <ClCompile Include="Engine\Time\Time.cpp" />
     <ClCompile Include="Game\Components\Bird.cpp" />
     <ClCompile Include="Game\Game.cpp" />
   </ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="Engine\IO\Input.h" />
     <ClInclude Include="Engine\Objects\Object.h" />
     <ClInclude Include="Engine\Structures\Structures.h" />
+    <ClInclude Include="Engine\Time\Time.h" />
     <ClInclude Include="Game\Components\Bird.h" />
     <ClInclude Include="Game\ComponentHeaders.h" />
   </ItemGroup>

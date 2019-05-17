@@ -8,3 +8,5 @@
 #include "Structures/Structures.h"
 
 #include "Graphics/Texture.h"
+
+#include "Time/Time.h"

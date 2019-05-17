@@ -3,20 +3,46 @@
 
 SpriteRenderer::SpriteRenderer(string path, int _width, int _height)
 {
-	texture = Texture::Texture(path);
+	textures.insert(textures.end(), Texture::Texture(path));
+	updateTimer = 0;
+	curUpdateTimer = -1;
 	width = _width;
 	height = _height;
 }
 
+SpriteRenderer::SpriteRenderer(string path[], int length, float _updateTime, int _width, int _height)
+{
+	for (int i = 0; i < length; i++)
+	{
+		textures.insert(textures.end(), Texture::Texture(path[i]));
+	}
+	updateTimer = _updateTime;
+	curUpdateTimer = Time::GetTimeRunning() + updateTimer;
+	width = _width;
+	height = _height;
+}
+
+void SpriteRenderer::Start()
+{
+}
+
 void SpriteRenderer::Update()
 {
-
 }
 
 void SpriteRenderer::Render()
 {
+	if (curUpdateTimer - Time::GetTimeRunning() <= 0 && curUpdateTimer != -1)
+	{
+		index++;
+		if (index >= textures.size())
+		{
+			index = 0;
+		}
+		curUpdateTimer = Time::GetTimeRunning() + updateTimer;
+	}
 	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, texture.GetID());
+	glBindTexture(GL_TEXTURE_2D, next(textures.begin(), index)->GetID());
 	glLoadIdentity();
 
 	// translate

@@ -36,15 +36,15 @@ void Input::Update()
 
 bool Input::GetKey(int key)
 {
-	return keyboardkeys[key].pressed;
+	return instance->keyboardkeys[key].pressed;
 }
 
 bool Input::GetKeyUp(int key)
 {
-	return keyboardkeys[key].up;
+	return instance->keyboardkeys[key].up;
 }
 
 bool Input::GetKeyDown(int key)
 {
-	return keyboardkeys[key].down;
+	return instance->keyboardkeys[key].down;
 }
