@@ -2,6 +2,7 @@
 
 #include "IO/Input.h"
 #include "Objects/Object.h"
+#include "Structures/Structures.h"
 
 #include <GLFW/glfw3.h>
 #pragma comment (lib, "opengl32.lib")
@@ -15,6 +16,8 @@ class Engine
 public:
 	static int SCREEN_WIDTH;
 	static int SCREEN_HEIGHT;
+	static Vector2 cameraPos;
+	static float zoom;
 
 	Engine();
 	~Engine();

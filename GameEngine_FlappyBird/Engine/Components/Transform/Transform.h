@@ -12,6 +12,7 @@ class Transform : public Component
 public:
 	Transform();
 
+	void Start();
 	void Update();
 	void Render();
 

@@ -2,6 +2,8 @@
 
 int Engine::SCREEN_WIDTH = 960;
 int Engine::SCREEN_HEIGHT = 600;
+Vector2 Engine::cameraPos = Vector2();
+float Engine::zoom = 1;
 
 GLFWwindow* Engine::window = NULL;
 
@@ -47,6 +49,9 @@ bool Engine::Initialize(const char* title)
 	int yPos = (vidMode->height - SCREEN_HEIGHT) / 2;
 	glfwSetWindowPos(window, xPos, yPos);
 
+	Time* time = new Time();
+	time->BeginRunning();
+
 	return true;
 }
 
@@ -68,7 +73,9 @@ void Engine::BeginRender()
 	int width, height;
 	glfwGetFramebufferSize(window, &width, &height);
 	// Viewport
-	glViewport(0, 0, width, height);
+	int viewWidth = width * zoom;
+	int viewHeight = height * zoom;
+	glViewport(-cameraPos.x, -cameraPos.y, viewWidth, viewHeight);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrtho(0, width, 0, height, -10, 10);
